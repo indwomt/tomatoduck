@@ -1,0 +1,19 @@
+{
+  "name": "tomatoduck",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indwomt/tomatoduck.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/indwomt/tomatoduck/issues"
+  },
+  "homepage": "https://github.com/indwomt/tomatoduck#readme"
+}
