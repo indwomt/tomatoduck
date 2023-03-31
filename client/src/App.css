@@ -44,4 +44,32 @@
 
 #root{
   background-color: #F86E51;
+  height: 100vh;
 }
+
+
+.timer-box{
+  height: 400px;
+  width:400px;
+  border-style: dotted;
+}
+
+/* styles.css */
+.bordered {
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.setting-btn,
+.start-btn,
+.login-btn {
+  border: 5px solid #F6C81C;
+border-radius: 14px;
+background-color: bisque;
+}
+
+.navbar{
+  border-bottom: 5px double rgba(230,215,41,0.22);
+  margin-bottom: 75px;
+}
+
