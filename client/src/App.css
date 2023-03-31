@@ -44,6 +44,7 @@
 
 #root{
   background-color: #F86E51;
+  height: 100vh;
 }
 
 
@@ -59,8 +60,10 @@
   border-radius: 5px;
 }
 
-.setting-btn {
+.setting-btn,
+.start-btn {
   border: 5px solid #F6C81C;
 border-radius: 14px;
+background-color: bisque;
 }
 

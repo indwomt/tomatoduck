@@ -12,8 +12,8 @@ export default function Timer(){
                 <h1 className='my-5'>45:00</h1>
                 
             </div>
-            <div class="container start-btn d-flex justify-content-center">
-            <button class='my-5'>Start Timer!</button>
+            <div class="container start-btn-box d-flex justify-content-center">
+            <button class='start-btn my-5'>Start Timer!</button>
             </div>
         </div>
     )
