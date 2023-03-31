@@ -45,3 +45,17 @@
 #root{
   background-color: #F86E51;
 }
+
+
+.timer-box{
+  height: 400px;
+  width:400px;
+  border-style: dotted;
+}
+
+/* styles.css */
+.bordered {
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
