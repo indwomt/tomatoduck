@@ -36,3 +36,6 @@ const userSchema = new Schema(
 
  userSchema.methods.verifyPassword = async (password) => bcrypt.compare(password, this.password)
 
+ const User = model(`User`, userSchema)
+ module.exports = User
+
