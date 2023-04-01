@@ -1,5 +1,6 @@
 const {Schema, model} = require(`mongoose`)
 const bcrypt = require(`bcrypt`)
+const todoSchema = require(`./Todo`)
 
 const userSchema = new Schema(
     {
