@@ -20,12 +20,7 @@ const userSchema = new Schema(
             required: true
         },
         todos: [todoSchema]
-    },
-    // {
-    //     toJSON: {
-    //         virtuals: true
-    //     }
-    // }
+    }
 )
  userSchema.pre(`save`, async (next) => {
     if(this.isNew || this.isModified(`password`)) {
