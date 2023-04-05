@@ -12,3 +12,20 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
 
+## Description
+
+blah blah bla
+
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/indwomt/tomatoduck)...[Github Repo](https://github.com/indwomt/tomatoduck)
+
+[![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)](https://tomatoduck.herokuapp.com/)...[Deployed Site](https://tomatoduck.herokuapp.com/)
+
+
+## Credit
+
+- [Lauren Bentley](https://github.com/indwomt)  
+- [Ivan Escobar](https://github.com/IvanFelipeEscobar) 
+
+## License
+
+This project is licensed under the MIT License - see the [MIT License](https://choosealicense.com/licenses/mit/) page.
