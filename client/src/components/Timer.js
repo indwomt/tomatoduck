@@ -1,9 +1,11 @@
-import react from 'react'
-// import timer from '../utils/timer'
+import react, {useState} from 'react'
+
 import{useTimer} from 'react-timer-hook'
 
 
-export default function Timer({expiryTimestamp}){
+export default function Timer(){
+
+    const [duration, setDuration] = useState(30 * 60); // initial duration is 30 minutes
 
     const {
         seconds,
@@ -15,16 +17,22 @@ export default function Timer({expiryTimestamp}){
         pause,
         resume,
         restart,
-      } = useTimer({ expiryTimestamp, onExpire: () => console.warn('onExpire called') });
+      } = useTimer({ expiryTimestamp: new Date().getTime() + duration * 1000, onExpire: () => console.warn('onExpire called') });
 
-
+      
+    // function for timer setting buttons
+      const handleButtonClick = (newDuration) => {
+        setDuration(newDuration);
+        // use react-timer-hook restart function to adjust timer duration
+        restart(new Date().getTime() + newDuration * 1000);
+      };
 
     return (
         <div className="container timer-box col-5 d-flex-col justify-content-center">
             <div className="timer-settings d-flex justify-content-center">
-                <button className="m-4 setting-btn">Short Break</button>
-                <button className="m-4 setting-btn">Long Break</button>
-                <button className="m-4 setting-btn">Tomato Time</button>
+                <button onClick={() => handleButtonClick(5*60)}className="m-4 setting-btn">Short Break</button>
+                <button onClick={() => handleButtonClick(10*60)}className="m-4 setting-btn">Long Break</button>
+                <button onClick={() => handleButtonClick(25*1800)}className="m-4 setting-btn">Tomato Time</button>
             </div>
             <div className="timer container col-6 d-flex justify-content-center bordered">
             <span class="timer-display">{minutes}</span><span class="timer-display">:</span><span class="timer-display">{seconds}</span>
