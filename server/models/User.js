@@ -30,7 +30,9 @@ const userSchema = new Schema(
     next()
  })
 
- userSchema.methods.verifyPassword = async (password) => bcrypt.compare(password, this.password)
+ userSchema.methods.verifyPassword = async function (password) {
+    return bcrypt.compare(password, this.password)
+ }
 
  const User = model(`User`, userSchema)
  module.exports = User

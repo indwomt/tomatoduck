@@ -12,19 +12,22 @@ module.exports = {
     },
     async createUser ({body}, res){
         const user = await User.create(body)
-        if(!user){res.json(400).json({message: `something went wrong!!!`})}
+        if(!user){
+            return res.json(400).json({message: `something went wrong!!!`})}
         const token = signToken(user)
-        res.status(200).json( {token, user})
+        res.json( {token, user})
     },
     async login({body}, res){
          const user = await User.findOne({
             $or: [{username: body.username}, {email: body.email}]
          })
-         if(!user){res.status(400).json({message: `user not found`})}
-         const validPassword = await user.isCorrectPassword(body.password)
-         if(!validPassword){res.status(400).json({message: `wrong password`})}
+         if(!user){
+            return res.status(400).json({message: `user not found`})}
+         const validPassword = await user.verifyPassword(body.password)
+         if(!validPassword){
+            return res.status(400).json({message: `wrong password`})}
          const token = signToken(user)
-         res.status(200).json( {token, user})
+         res.json( {token, user})
 
     },
     async saveTodo({user, body}, res){
@@ -34,9 +37,9 @@ module.exports = {
                 {$addToSet: {todos: body}},
                 {new: true, runValidators: true}
             )
-            return res.status(200).json(addTodo)
+            return res.json(addTodo)
         } catch (error) {
-            return res. status(400).json(error)
+            return res.status(400).json(error)
         }
     },
     async deleteTodo({user, params}, res){
@@ -47,6 +50,6 @@ module.exports = {
         )
         !rmTodo
             ? res.status(400).json({message: `no item found`})
-            : res.status(200).json(rmTodo)
+            : res.json(rmTodo)
     }
 }
