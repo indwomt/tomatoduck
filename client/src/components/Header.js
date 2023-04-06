@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import icon from '../assets/tomato-24.svg';
-import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, ModalFooter, Input,InputGroup, InputGroupText } from 'reactstrap';
 
 const Header = () => {
   const [modal, setModal] = useState(false);
@@ -23,7 +23,21 @@ const Header = () => {
       <Modal isOpen={modal} toggle={toggleModal}>
         <ModalHeader toggle={toggleModal}>Sign In</ModalHeader>
         <ModalBody>
-          <p>Modal content goes here.</p>
+        <div>
+  <InputGroup>
+    
+    <Input placeholder="username" />
+  </InputGroup>
+  <br />
+  <InputGroup>
+    
+    <Input placeholder="password" />
+  </InputGroup>
+  <br />
+  
+  <br />
+  
+</div>
         </ModalBody>
         <ModalFooter>
           <button color='secondary' onClick={toggleModal}>
