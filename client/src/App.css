@@ -63,7 +63,8 @@
 .setting-btn,
 .start-btn,
 .login-btn,
-.add-task-btn {
+.add-task-btn,
+.timer-btn {
   border: 5px solid #F6C81C;
 border-radius: 14px;
 background-color: bisque;
