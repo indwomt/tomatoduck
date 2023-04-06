@@ -62,14 +62,18 @@
 
 .setting-btn,
 .start-btn,
-.login-btn {
+.login-btn,
+.add-task-btn {
   border: 5px solid #F6C81C;
 border-radius: 14px;
 background-color: bisque;
 }
 
-.navbar{
+.navbar,
+.task-header{
   border-bottom: 5px double rgba(230,215,41,0.22);
   margin-bottom: 75px;
 }
+
+
 
