@@ -27,12 +27,12 @@ export default function Timer({expiryTimestamp}){
                 <button className="m-4 setting-btn">Tomato Time</button>
             </div>
             <div className="timer container col-6 d-flex justify-content-center bordered">
-            <span>{minutes}</span>:<span>{seconds}</span>
+            <span class="timer-display">{minutes}</span><span class="timer-display">:</span><span class="timer-display">{seconds}</span>
                 
             </div>
             <div class="container start-btn-box d-flex justify-content-center">
             
-            <button class='start-btn my-5'>Start Timer!</button>
+            <button onclick={start} class='start-btn my-5'>Start Timer!</button>
             
         </div><div class='hook-btns container col-4 d-flex justify-content-around'>
             
