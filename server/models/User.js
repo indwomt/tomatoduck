@@ -22,7 +22,7 @@ const userSchema = new Schema(
         todos: [todoSchema]
     }
 )
- userSchema.pre(`save`, async (next) => {
+ userSchema.pre(`save`, async function (next) { //don't use arrow function!!!
     if(this.isNew || this.isModified(`password`)) {
         const saltRounds = 10 //bcrypt option to set `cost factor`, higher the value longer the processing time
         this.password = await bcrypt.hash(this.password, saltRounds)
