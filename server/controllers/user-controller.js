@@ -3,18 +3,18 @@ const { signToken } = require("../utils/auth")
 
 module.exports = {
     async getUser({user = null, params}, res){
-        const user = await User.findOne({
+        const me = await User.findOne({
             $or: [{_id: user ? user._id : params.id}, {username: params.username}]
         })
-        !userData
+        !me
             ? res.status(400).json({message: `user not found`})
-            : res.json(user)
+            : res.status(200).json(me)
     },
     async createUser ({body}, res){
         const user = await User.create(body)
-        if(!newUser){res.json(400).json({message: `something went wrong!!!`})}
+        if(!user){res.json(400).json({message: `something went wrong!!!`})}
         const token = signToken(user)
-        res.json( token, user)
+        res.status(200).json( {token, user})
     },
     async login({body}, res){
          const user = await User.findOne({
@@ -24,7 +24,7 @@ module.exports = {
          const validPassword = await user.isCorrectPassword(body.password)
          if(!validPassword){res.status(400).json({message: `wrong password`})}
          const token = signToken(user)
-         res.json( token, user)
+         res.status(200).json( {token, user})
 
     },
     async saveTodo({user, body}, res){
@@ -34,7 +34,7 @@ module.exports = {
                 {$addToSet: {todos: body}},
                 {new: true, runValidators: true}
             )
-            return res.json(addTodo)
+            return res.status(200).json(addTodo)
         } catch (error) {
             return res. status(400).json(error)
         }
@@ -47,6 +47,6 @@ module.exports = {
         )
         !rmTodo
             ? res.status(400).json({message: `no item found`})
-            : res.json(rmTodo)
+            : res.status(200).json(rmTodo)
     }
 }
