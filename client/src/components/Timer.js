@@ -31,17 +31,21 @@ export default function Timer({expiryTimestamp}){
                 
             </div>
             <div class="container start-btn-box d-flex justify-content-center">
-            <button onClick={start}>Start</button>
-    //   <button onClick={pause}>Pause</button>
-    //   <button onClick={resume}>Resume</button>
-    //   <button onClick={() => {
+            
+            <button class='start-btn my-5'>Start Timer!</button>
+            
+        </div><div class='hook-btns container col-4 d-flex justify-content-around'>
+            
+       <button onClick={pause}>Pause</button>
+      <button onClick={resume}>Resume</button>
+       <button onClick={() => {
         // Restarts to 5 minutes timer
         const time = new Date();
         time.setSeconds(time.getSeconds() + 1800);
         restart(time)
       }}>Restart</button>
-            <button class='start-btn my-5'>Start Timer!</button>
             </div>
+            
         </div>
 
 
