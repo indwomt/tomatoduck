@@ -1,7 +1,7 @@
 
-// const timeHandler = () => {
-//     let timeVal = 5 //hardcoded 5 mins
-//     let time = timeVal * 60
+// const timeHandler = (timeValue) => {
+    
+//     let time = timeValue * 60
 //     const counter = ()=> {
    
 //         let mins = Math.floor(time/60)

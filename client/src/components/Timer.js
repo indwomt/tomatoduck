@@ -7,7 +7,7 @@ export default function Timer(){
 
     const [duration, setDuration] = useState(30 * 60); // initial duration is 30 minutes
 
-    const {
+    let {
         seconds,
         minutes,
         hours,
@@ -35,7 +35,7 @@ export default function Timer(){
                 <button onClick={() => handleButtonClick(25*1800)}className="m-4 setting-btn">Tomato Time</button>
             </div>
             <div className="timer container col-6 d-flex justify-content-center bordered">
-            <span class="timer-display">{minutes}</span><span class="timer-display">:</span><span class="timer-display">{seconds}</span>
+            <span class="timer-display">{minutes}</span><span class="timer-display">:</span><span class="timer-display">{seconds=seconds<10?`0${seconds}`:seconds}</span>
                 
             </div>
             <div class="container start-btn-box d-flex justify-content-center">
