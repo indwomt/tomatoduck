@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import icon from '../assets/tomato-24.svg';
 // import { Nav, Container} from 'reactstrap';
+import { Link } from 'react-router-dom'
 import { Modal, Tab, Nav,} from 'react-bootstrap'
 import SignUpForm from './signup';
 import LoginForm from './login';
-// import Auth from '../utils/auth'
+import Auth from '../utils/auth'
 
 const Header = () => {
   const [modal, setModal] = useState(false);
@@ -16,13 +17,21 @@ const Header = () => {
   return (
     <div className='container'>
       <nav className='navbar'>
-        <a className='navbar-brand' href='#'>
+        <Link to='/'>
           <img src={icon} alt='Tomato icon' />
           TomatoDuck
-        </a>
+        </Link>
+        {Auth.loggedIn() ? (<>
+          <Link to='/preferences'>
+            <button>User Settings</button>
+          </Link>
+          <button onClick={Auth.logout}></button></>
+
+        ) : (
         <button className='login-btn' onClick={()=>setModal(true)}>
           Sign In/Sign Up
-        </button>
+        </button>)
+        } 
       </nav>
 
 
