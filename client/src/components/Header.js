@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import icon from '../assets/tomato-24.svg';
 import { Modal, ModalHeader, ModalBody, ModalFooter, Input,InputGroup, InputGroupText } from 'reactstrap';
+// import Auth from '../utils/auth'
 
 const Header = () => {
   const [modal, setModal] = useState(false);
