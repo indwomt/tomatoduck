@@ -35,17 +35,17 @@ export default function Timer(){
                 <button onClick={() => handleButtonClick(25*1800)}className="m-4 setting-btn">Tomato Time</button>
             </div>
             <div className="timer container col-6 d-flex justify-content-center bordered">
-            <span class="timer-display">{minutes}</span><span class="timer-display">:</span><span class="timer-display">{seconds=seconds<10?`0${seconds}`:seconds}</span>
+            <span className="timer-display">{minutes}</span><span className="timer-display">:</span><span className="timer-display">{seconds=seconds<10?`0${seconds}`:seconds}</span>
                 
             </div>
-            <div class="container start-btn-box d-flex justify-content-center">
+            <div className="container start-btn-box d-flex justify-content-center">
             
             
             
-        </div><div class='hook-btns container col-4 d-flex justify-content-around my-5'>
-       <button class='timer-btn'onClick={pause}>Pause</button>
-      <button class='timer-btn'onClick={resume}>Start</button>
-       <button class='timer-btn'onClick={() => {
+        </div><div className='hook-btns container col-4 d-flex justify-content-around my-5'>
+       <button className='timer-btn'onClick={pause}>Pause</button>
+      <button className='timer-btn'onClick={resume}>Start</button>
+       <button className='timer-btn'onClick={() => {
         // Restarts to 5 minutes timer
         const time = new Date();
         time.setSeconds(time.getSeconds() + 1800);

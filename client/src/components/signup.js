@@ -40,7 +40,7 @@ const SignUpForm = () => {
         })
     }
     return (
-        <Form noValidate validate={validated} onSubmit={handleSubmit}>
+        <Form noValidate validated={validated} onSubmit={handleSubmit}>
             <Alert dissmisable onClose={()=> setAlert(false)} show={alert}>
                 Something Went Wrong!!!
             </Alert>
@@ -49,6 +49,7 @@ const SignUpForm = () => {
                 <Form.Control
                     type='text'
                     placeholder='Your username here'
+                    name='username'
                     onChange={handleInput}
                     value={userData.username}
                     required
@@ -60,6 +61,7 @@ const SignUpForm = () => {
                 <Form.Control
                     type='email'
                     placeholder='Your email address'
+                    name='email'
                     onChange={handleInput}
                     value={userData.email}
                     required
@@ -71,6 +73,7 @@ const SignUpForm = () => {
                 <Form.Control
                     type='password'
                     placeholder='Password'
+                    name='password'
                     onChange={handleInput}
                     value={userData.password}
                     required
