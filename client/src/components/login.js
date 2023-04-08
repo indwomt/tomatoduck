@@ -40,7 +40,7 @@ const LoginForm = () => {
     }
     return (
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
-            <Alert dissmisable onClose={()=> setAlert(false)} show={alert}>
+            <Alert dismissible onClose={()=> setAlert(false)} show={alert}>
                 Something Went Wrong!!!
             </Alert>
             <Form.Group>
