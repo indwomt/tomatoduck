@@ -3,7 +3,6 @@ import Header from './components/Header'
 import Main from './pages/main';
 import Footer from './components/Footer'
 import UserPref from './pages/user-preferences';
-import ChatBot from './components/chatbot';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 // import bootstrap from 'react-bootstrap'
 
