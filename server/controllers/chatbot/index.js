@@ -13,7 +13,9 @@ try {
 
     const response = await openai.createCompletion({
     model: "text-davinci-003",
-     prompt
+     prompt,
+     max_tokens: 256,
+     temperature: 0.2
 })
     const completion = response.data.choices[0].text
     return res.json({
