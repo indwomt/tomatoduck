@@ -4,6 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import TaskCard from './task-card'
 
+
 export default function Tasks() {
   const [show, setShow] = useState(false);
 
@@ -11,7 +12,7 @@ export default function Tasks() {
   const handleShow = () => setShow(true);
 
   return (
-    <div className='container col-8 d-flex-col justify-content-center my-5'>
+    <div className='container col-6 d-flex-col justify-content-center my-5'>
       <div className='task-header col-12 justify-content-between d-flex flex-wrap'>
         {/* add something like todo[i].length to get the tasks needed */}
         <h2 class='col-md-4 flex-wrap'>Tasks Left: 0</h2>
