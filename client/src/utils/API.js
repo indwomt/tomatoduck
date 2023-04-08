@@ -10,7 +10,7 @@ export const getMe = (token) => {
 export const createUser = (userData) => {
     return fetch(`/api/users`, {
         method: 'POST',
-        header: {
+        headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(userData)
@@ -20,7 +20,7 @@ export const createUser = (userData) => {
 export const loginUser = (userData) => {
     return fetch(`/api/users/login`, {
         method: 'POST',
-        header: {
+        headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(userData)
@@ -30,7 +30,7 @@ export const loginUser = (userData) => {
 export const saveTodo = (todoData, token) => {
     return fetch(`/api/users`, {
         method: 'PUT',
-        header: {
+        headers: {
             'Content-Type': 'application/json',
             authorization: `Bearer ${token}`
         },
@@ -41,7 +41,7 @@ export const saveTodo = (todoData, token) => {
 export const deleteTodo = (todoData, token) => {
     return fetch(`/api/users/todos/:todoId`, {
         method: 'DELETE',
-        header: {
+        headers: {
             authorization: `Bearer ${token}`
         }
     })
