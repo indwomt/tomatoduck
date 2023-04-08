@@ -6,6 +6,7 @@ const Main = () => {
         <>
         <Timer/>
         <Tasks/>
+        <ChatBot/>
         </>
     )
 }
