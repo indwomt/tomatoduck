@@ -11,6 +11,7 @@ function App() {
     <Router>
       <div className="App">
         <Header />
+      
         <Routes>
           <Route
             path='/'
@@ -28,7 +29,7 @@ function App() {
         <Footer />
       </div>
     </Router>
-  );
+  )
 }
 
 export default App;

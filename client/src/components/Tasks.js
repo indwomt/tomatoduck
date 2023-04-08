@@ -15,7 +15,7 @@ export default function Tasks() {
     <div className='container col-6 d-flex-col justify-content-center my-5'>
       <div className='task-header col-12 justify-content-between d-flex flex-wrap'>
         {/* add something like todo[i].length to get the tasks needed */}
-        <h2 class='col-md-4 flex-wrap'>Tasks Left: 0</h2>
+        <h2 className='col-md-4 flex-wrap'>Tasks Left: 0</h2>
         <button className='add-task-btn col-md-4 flex-wrap' onClick={handleShow}>
           Add Task
         </button>
