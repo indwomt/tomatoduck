@@ -29,19 +29,19 @@ export default function Timer() {
       <div className="timer-settings d-flex justify-content-center flex-wrap">
         <button
           onClick={() => handleButtonClick(5 * 60)}
-          className="m-2 col-md-4 col-12 setting-btn"
+          className="m-2 col-md-2 col-4 setting-btn"
         >
           Short Break
         </button>
         <button
           onClick={() => handleButtonClick(10 * 60)}
-          className="m-2 col-md-4 col-12 setting-btn"
+          className="m-2 col-md-2 col-4 setting-btn"
         >
           Long Break
         </button>
         <button
           onClick={() => handleButtonClick(25 * 60)}
-          className="m-2 col-md-4 col-12 setting-btn"
+          className="m-2 col-md-2 col-4 setting-btn"
         >
           Tomato Time
         </button>
@@ -54,15 +54,15 @@ export default function Timer() {
         </span>
       </div>
       <div className="container start-btn-box d-flex justify-content-center"></div>
-      <div className="hook-btns container col-8 mx-auto my-5 d-flex justify-content-around">
-        <button className="timer-btn" onClick={pause}>
+      <div className="hook-btns container col-8 mx-auto my-5 d-flex justify-content-around flex-wrap">
+        <button className="timer-btn m-2 col-md-2 col-4" onClick={pause}>
           Pause
         </button>
-        <button className="timer-btn" onClick={resume}>
+        <button className="timer-btn m-2 col-md-2 col-4" onClick={resume}>
           Start
         </button>
         <button
-          className="timer-btn"
+          className="timer-btn m-2 col-md-2 col-4"
           onClick={() => {
             // Restarts to 25 minutes timer
             const time = new Date();
@@ -76,6 +76,7 @@ export default function Timer() {
     </div>
   );
 }
+
 
 
 
