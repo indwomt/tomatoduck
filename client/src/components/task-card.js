@@ -1,18 +1,25 @@
 import react, {useEffect, useState} from 'react';
 import Card from 'react-bootstrap/Card';
-import {ArrowRight} from 'react-bootstrap-icons'
+import Button from 'react-bootstrap/Button'
+import {Trash, Pen} from 'react-bootstrap-icons'
+
 
 export default function taskCard(props) {
 
     return(
-        <div class="container col-6">
-        <Card>
-            <Card.Body>I am a task to do!!!
-                <ArrowRight />
-            </Card.Body>
-        </Card>
+        <div className="container col-6">
+            <Card>
+                <div className='container d-flex align-items-center'>
+                    <Card.Body>
+                        I am a task to do!!!
+                    </Card.Body>
+                    <Button className='task-btn'><Pen /></Button>
+                    <Button className='task-btn ml-2'><Trash /></Button>
+                </div>
+            </Card>
         </div>
     )
-
-
 }
+
+
+
