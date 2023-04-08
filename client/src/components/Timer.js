@@ -24,34 +24,59 @@ export default function Timer() {
     restart(new Date().getTime() + newDuration * 1000);
   };
 
-    return (
-        <div className="container timer-box col-5 d-flex-col justify-content-center">
-            <div className="timer-settings d-flex justify-content-center">
-                <button onClick={() => handleButtonClick(5*60)}className="m-4 setting-btn">Short Break</button>
-                <button onClick={() => handleButtonClick(10*60)}className="m-4 setting-btn">Long Break</button>
-                <button onClick={() => handleButtonClick(25*1800)}className="m-4 setting-btn">Tomato Time</button>
-            </div>
-            <div className="timer container col-6 d-flex justify-content-center bordered">
-            <span class="timer-display">{minutes}</span><span class="timer-display">:</span><span class="timer-display">{seconds=seconds<10?`0${seconds}`:seconds}</span>
-                
-            </div>
-            <div class="container start-btn-box d-flex justify-content-center">
-            
-            
-            
-        </div><div class='hook-btns container col-4 d-flex justify-content-around my-5'>
-       <button class='timer-btn'onClick={pause}>Pause</button>
-      <button class='timer-btn'onClick={resume}>Start</button>
-       <button class='timer-btn'onClick={() => {
-        // Restarts to 5 minutes timer
-        const time = new Date();
-        time.setSeconds(time.getSeconds() + 1800);
-        restart(time)
-      }}>Restart</button>
-            </div>
-        </div>
-    )
+  return (
+    <div className="container timer-box">
+      <div className="timer-settings d-flex justify-content-center flex-wrap">
+        <button
+          onClick={() => handleButtonClick(5 * 60)}
+          className="m-2 col-md-4 col-12 setting-btn"
+        >
+          Short Break
+        </button>
+        <button
+          onClick={() => handleButtonClick(10 * 60)}
+          className="m-2 col-md-4 col-12 setting-btn"
+        >
+          Long Break
+        </button>
+        <button
+          onClick={() => handleButtonClick(25 * 60)}
+          className="m-2 col-md-4 col-12 setting-btn"
+        >
+          Tomato Time
+        </button>
+      </div>
+      <div className="timer container col-6 d-flex justify-content-center bordered">
+        <span className="timer-display">{minutes}</span>
+        <span className="timer-display">:</span>
+        <span className="timer-display">
+          {seconds < 10 ? `0${seconds}` : seconds}
+        </span>
+      </div>
+      <div className="container start-btn-box d-flex justify-content-center"></div>
+      <div className="hook-btns container col-8 mx-auto my-5 d-flex justify-content-around">
+        <button className="timer-btn" onClick={pause}>
+          Pause
+        </button>
+        <button className="timer-btn" onClick={resume}>
+          Start
+        </button>
+        <button
+          className="timer-btn"
+          onClick={() => {
+            // Restarts to 25 minutes timer
+            const time = new Date();
+            time.setSeconds(time.getSeconds() + 25 * 60);
+            restart(time);
+          }}
+        >
+          Restart
+        </button>
+      </div>
+    </div>
+  );
 }
+
 
 
 
