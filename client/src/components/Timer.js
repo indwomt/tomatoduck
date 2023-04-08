@@ -15,6 +15,7 @@ export default function Timer() {
   } = useTimer({
     expiryTimestamp: new Date().getTime() + duration * 1000,
     onExpire: () => console.warn('onExpire called'),
+    autoStart: false
   });
 
   // function for timer setting buttons
