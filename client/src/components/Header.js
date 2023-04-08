@@ -23,9 +23,9 @@ const Header = () => {
         </Link>
         {Auth.loggedIn() ? (<>
           <Link to='/preferences'>
-            <button>User Settings</button>
+            <button className='login-btn'>User Settings</button>
           </Link>
-          <button onClick={Auth.logout}></button></>
+          <button className='login-btn' onClick={Auth.logout}>Log Out</button></>
 
         ) : (
         <button className='login-btn' onClick={()=>setModal(true)}>
