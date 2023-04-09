@@ -41,7 +41,7 @@ return (
         <button className='start-btn mt-3  ' type='submit'>Submit</button>
     </Form>
     <div className='duck-cont mt-3'>
-        <img className='duck' src={duck}></img>
+        <img className='duck' alt='rubber duck'src={duck}></img>
     {cbResponse
     ? (<p className="response">{cbResponse}</p>)
     : (<p></p>)
