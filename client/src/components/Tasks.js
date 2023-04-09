@@ -7,9 +7,15 @@ import TaskCard from './task-card'
 
 export default function Tasks() {
   const [show, setShow] = useState(false);
+  const [todo, setTodo] = useState('')
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const handleFormSubmit = (event) => {
+    event.prevenDefault()
+    console.log(`click`)
+  }
 
   return (
     <div className='container col-6 d-flex-col justify-content-center my-5'>
@@ -28,15 +34,20 @@ export default function Tasks() {
         <Modal.Header closeButton>
           <Modal.Title>Add a new task</Modal.Title>
         </Modal.Header>
-        <Form>
+        <Form onSubmit={handleFormSubmit}>
           <Form.Group className='mb-3' controlId='formBasicEmail'>
-            <Form.Control type='email' placeholder='Your To-do Task' />
+            <Form.Control 
+            type='email' 
+            placeholder='Your To-do Task' 
+            value={todo}
+            onChange={e=>setTodo(e.target.value)}
+            />
           </Form.Group>
           <Modal.Footer>
             <Button variant='secondary' onClick={handleClose}>
               Close
             </Button>
-            <Button variant='primary' onClick={handleClose}>
+            <Button variant='primary'  type="submit" onClick={handleClose}>
               Save Changes
             </Button>
           </Modal.Footer>
