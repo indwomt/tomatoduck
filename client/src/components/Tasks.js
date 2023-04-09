@@ -48,7 +48,7 @@ export default function Tasks() {
         <Form onSubmit={handleFormSubmit}>
           <Form.Group className='mb-3' controlId='formBasicEmail'>
             <Form.Control 
-            type='email' 
+            type='text' 
             placeholder='Your To-do Task' 
             value={todo}
             onChange={e=>setTodo(e.target.value)}
@@ -58,7 +58,7 @@ export default function Tasks() {
             <Button variant='secondary' onClick={handleClose}>
               Close
             </Button>
-            <Button variant='primary'  type="submit" onClick={handleClose}>
+            <Button variant='primary'  type="submit">
               Save Changes
             </Button>
           </Modal.Footer>
