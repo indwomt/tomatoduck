@@ -9,7 +9,7 @@ const openai = new OpenAIApi(configuration);
 const cbRequest = async ( req, res ) => {
     const prompt = req.body.prompt
 try {
-    if(prompt===null) {res.status(400).json({message:`no input`})}
+    if(prompt==null) {res.status(400).json({message:`no input`})}
 
     const response = await openai.createCompletion({
     model: "text-davinci-003",

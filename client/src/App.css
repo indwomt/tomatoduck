@@ -90,3 +90,31 @@ background-color: bisque;
 
 
 
+
+
+
+.chatbox{
+  border-style: dotted;
+
+}
+
+.response {
+  height: fit-content;
+  margin: 7px;
+  padding: 10px;
+  border-radius: 25px;
+  background-color: aqua;
+  color: black;
+  animation: forwards;
+}
+.question{
+  width: 40%;
+}
+.duck{
+  background-color: #F86E51;
+  width: 45%;
+}
+.duck-cont{
+  display: flex;
+
+}

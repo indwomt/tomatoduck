@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import { Form, Button, Container } from 'react-bootstrap'
+import { Form, Container } from 'react-bootstrap'
 import {askChatBot} from '../utils/API'
+import duck from '../images/duck.png'
 
 // const configuration = new Configuration({
 //   apiKey: process.env.OPENAI_API_KEY,
@@ -27,18 +28,25 @@ const handleQuestionSubmit = async (e) => {
 }}
 
 return (
-    <Container className='bordered'>
-    <p>{prompt}</p>
-    <br/>
-    <p>{cbResponse}</p>
+    <Container className="chatbox p-3">
+    
     <Form onSubmit={handleQuestionSubmit}>
         <Form.Control
+            size="sm"
+            className=''
             type='text'
             value={prompt}
             onChange={e=>setPrompt(e.target.value)}
         />
-        <Button className='start-btn' type='submit'>Submit</Button>
+        <button className='start-btn mt-3  ' type='submit'>Submit</button>
     </Form>
+    <div className='duck-cont mt-3'>
+        <img className='duck' src={duck}></img>
+    {cbResponse
+    ? (<p className="response">{cbResponse}</p>)
+    : (<p></p>)
+    }
+    </div>
     </Container>
 )
 } 
