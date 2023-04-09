@@ -80,5 +80,13 @@ background-color: bisque;
   font-size: 70px;
 }
 
+.task-btn{
+  margin-right:10px
+}
+
+.task-card{
+  background-color: rgb(81, 31, 70);
+}
+
 
 
