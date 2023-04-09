@@ -3,7 +3,8 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import TaskCard from './task-card'
-
+import Auth from '../utils/auth'
+import { saveTodo } from '../utils/API';
 
 export default function Tasks() {
   const [show, setShow] = useState(false);
@@ -12,10 +13,20 @@ export default function Tasks() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.prevenDefault()
     console.log(`click`)
-  }
+    const token = Auth.loggedIn() ? Auth.getToken() : null
+    if(!token){
+      return false
+    }
+    try {
+      const response = await saveTodo(todo, token)
+      console.log(response)
+    } catch (error) {
+      console.error(error)
+    }
+   }
 
   return (
     <div className='container col-6 d-flex-col justify-content-center my-5'>

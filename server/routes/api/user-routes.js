@@ -9,7 +9,7 @@ const {
 
 const { authMiddleware }= require(`../../utils/auth`)
 // .../api/users
-router.route(`/`).post(createUser).put(authMiddleware, saveTodo)
+router.route(`/`).post(createUser).post(authMiddleware, saveTodo)
 // .../api/users/login
 router.route(`/login`).post(login)
 // .../api/users/me
