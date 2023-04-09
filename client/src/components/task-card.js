@@ -9,11 +9,6 @@ import {Trash, Pen} from 'react-bootstrap-icons'
 
 
 export default function taskCard(props) {
-//  const {userTasks} = await getUser({
-    
-//  })
-
-
 
     return(
         <div className="container col-6">
