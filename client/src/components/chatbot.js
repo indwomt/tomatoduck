@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Form, Button, } from 'react-bootstrap'
+import { Form, Button, Container } from 'react-bootstrap'
 import {askChatBot} from '../utils/API'
 
 // const configuration = new Configuration({
@@ -27,7 +27,7 @@ const handleQuestionSubmit = async (e) => {
 }}
 
 return (
-    <>
+    <Container className='bordered'>
     <p>{prompt}</p>
     <br/>
     <p>{cbResponse}</p>
@@ -39,7 +39,7 @@ return (
         />
         <Button className='start-btn' type='submit'>Submit</Button>
     </Form>
-    </>
+    </Container>
 )
 } 
 export default ChatBot
