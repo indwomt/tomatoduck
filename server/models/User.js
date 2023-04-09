@@ -19,7 +19,11 @@ const userSchema = new Schema(
             type: String,
             required: true
         },
-        todos: [todoSchema]
+        todos: [{
+            type: Schema.Types.ObjectId,
+            ref: `Todo`
+        }],
+        timePreset: Number
     }
 )
  userSchema.pre(`save`, async function (next) { //don't use arrow function!!!

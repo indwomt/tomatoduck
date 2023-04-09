@@ -29,7 +29,7 @@ export const loginUser = (userData) => {
 
 export const saveTodo = (todoData, token) => {
     return fetch(`/api/users`, {
-        method: 'PUT',
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             authorization: `Bearer ${token}`

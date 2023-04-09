@@ -1,4 +1,4 @@
-const {User} = require(`../models`)
+const {User, Todo } = require(`../models`)
 const { signToken } = require("../utils/auth")
 
 module.exports = {
@@ -31,10 +31,12 @@ module.exports = {
 
     },
     async saveTodo({user, body}, res){
+
         try {
+            const newTodo = await Todo.create(body)
             const addTodo = await User.findOneAndUpdate(
                 {_id: user._id},
-                {$addToSet: {todos: body}},
+                {$addToSet: {todos: newTodo._id}},
                 {new: true, runValidators: true}
             )
             return res.json(addTodo)
