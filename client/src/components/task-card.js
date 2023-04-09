@@ -5,7 +5,7 @@ import {ArrowRight} from 'react-bootstrap-icons'
 export default function taskCard(props) {
 
     return(
-        <div class="container col-6">
+        <div className="container col-6">
         <Card>
             <Card.Body>I am a task to do!!!
                 <ArrowRight />
