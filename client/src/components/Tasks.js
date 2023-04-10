@@ -3,7 +3,8 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import TaskCard from './task-card'
-
+import Auth from '../utils/auth'
+import { saveTodo } from '../utils/API';
 
 export default function Tasks() {
   const [show, setShow] = useState(false);
@@ -12,10 +13,20 @@ export default function Tasks() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.prevenDefault()
     console.log(`click`)
-  }
+    const token = Auth.loggedIn() ? Auth.getToken() : null
+    if(!token){
+      
+    }
+    try {
+      const response = await saveTodo(todo, token)
+      console.log(response)
+    } catch (error) {
+      console.error(error)
+    }
+   }
 
   return (
     <div className='container col-6 d-flex-col justify-content-center my-5'>
@@ -37,7 +48,7 @@ export default function Tasks() {
         <Form onSubmit={handleFormSubmit}>
           <Form.Group className='mb-3' controlId='formBasicEmail'>
             <Form.Control 
-            type='email' 
+            type='text' 
             placeholder='Your To-do Task' 
             value={todo}
             onChange={e=>setTodo(e.target.value)}
@@ -47,7 +58,7 @@ export default function Tasks() {
             <Button variant='secondary' onClick={handleClose}>
               Close
             </Button>
-            <Button variant='primary'  type="submit" onClick={handleClose}>
+            <Button variant='primary'  type="submit">
               Save Changes
             </Button>
           </Modal.Footer>

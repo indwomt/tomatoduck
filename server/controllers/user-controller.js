@@ -1,11 +1,11 @@
-const {User} = require(`../models`)
+const {User, Todo } = require(`../models`)
 const { signToken } = require("../utils/auth")
 
 module.exports = {
     async getUser({user = null, params}, res){
         const me = await User.findOne({
             $or: [{_id: user ? user._id : params.id}, {username: params.username}]
-        })
+        }).populate({path: `todos`, select: `-__v`})
         !me
             ? res.status(400).json({message: `user not found`})
             : res.status(200).json(me)
@@ -31,10 +31,12 @@ module.exports = {
 
     },
     async saveTodo({user, body}, res){
+
         try {
+            const newTodo = await Todo.create(body)
             const addTodo = await User.findOneAndUpdate(
                 {_id: user._id},
-                {$addToSet: {todos: body}},
+                {$addToSet: {todos: newTodo._id}},
                 {new: true, runValidators: true}
             )
             return res.json(addTodo)

@@ -90,3 +90,42 @@ background-color: bisque;
 
 
 
+
+
+
+.chatbox{
+  height: 400px;
+  width:400px;
+  border-style: dotted;
+  border-style: dotted;
+
+}
+
+.response {
+  height: fit-content;
+  margin: 7px;
+  padding: 10px;
+  border-radius: 25px;
+  background-color: aqua;
+  color: black;
+  animation: forwards;
+}
+.question{
+  width: 40%;
+}
+.duck{
+  height: 40%;
+  width: 40%;
+}
+.duck-cont{
+  display: flex;
+  justify-items: center;
+}
+.main{
+  display: flex;
+}
+.input{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

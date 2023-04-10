@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTimer } from 'react-timer-hook';
 
 export default function Timer() {
-  const [duration, setDuration] = useState(30 * 60); // initial duration is 30 minutes
+  const [duration, setDuration] = useState(25 * 60); // initial duration is 30 minutes
 
   let {
     seconds,

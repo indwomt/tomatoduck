@@ -1,10 +1,6 @@
-const {Schema, Types} = require(`mongoose`)
+const {Schema, model} = require(`mongoose`)
 
 const todoSchema = new Schema({
-    todoId: {
-        type: Schema.Types.ObjectId,
-        default: () => new Types.ObjectId
-    },
     todo: {
         type: String,
         maxLength: 250
@@ -14,4 +10,5 @@ const todoSchema = new Schema({
         default: Date.now
     }
 })
- module.exports = todoSchema
+const Todo = model(`Todo`, todoSchema)
+ module.exports = Todo
