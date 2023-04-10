@@ -16,22 +16,28 @@ export default function Tasks() {
   const handleFormSubmit = async (event) => {
     event.preventDefault()
     console.log(`click`)
+    console.log(todo)
     const token = Auth.loggedIn() ? Auth.getToken() : null
     if(!token){
       return false
     }
     try {
-      const response = await saveTodo(todo, token)
+      
+      const response = await (await saveTodo(todo, token)).json()
+
+      
+
       console.log(response)
+      
+  
+
     } catch (error) {
       console.error(error)
     }
 
-    const { todos } = await response.json()
+    
 
-    const allTodos = todos.map((task) =>{
-    taskBody = todos.todo
-    })
+    
 
 
    }
