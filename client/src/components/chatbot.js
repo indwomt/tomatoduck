@@ -31,13 +31,13 @@ return (
     <Container className="chatbox p-3">
     
     <Form onSubmit={handleQuestionSubmit}>
+        <div className='input'>
         <Form.Control
-            size="sm"
-            className=''
             type='text'
             value={prompt}
             onChange={e=>setPrompt(e.target.value)}
-        />
+        /><span>Powered by Open AI</span>
+        </div>
         <button className='start-btn mt-3  ' type='submit'>Submit</button>
     </Form>
     <div className='duck-cont mt-3'>

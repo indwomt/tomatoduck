@@ -18,7 +18,7 @@ export default function Tasks() {
     console.log(`click`)
     const token = Auth.loggedIn() ? Auth.getToken() : null
     if(!token){
-      return false
+      
     }
     try {
       const response = await saveTodo(todo, token)
