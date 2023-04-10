@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './components/Header'
-import Main from './pages/main';
+import Main from './pages/Main';
 import Footer from './components/Footer'
 import UserPref from './pages/User-preferences';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
