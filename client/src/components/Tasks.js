@@ -14,11 +14,11 @@ export default function Tasks() {
   const handleShow = () => setShow(true);
 
   const handleFormSubmit = async (event) => {
-    event.prevenDefault()
+    event.preventDefault()
     console.log(`click`)
     const token = Auth.loggedIn() ? Auth.getToken() : null
     if(!token){
-      
+      return false
     }
     try {
       const response = await saveTodo(todo, token)
@@ -26,6 +26,14 @@ export default function Tasks() {
     } catch (error) {
       console.error(error)
     }
+
+    const { todos } = await response.json()
+
+    const allTodos = todos.map((task) =>{
+    taskBody = todos.todo
+    })
+
+
    }
 
   return (
