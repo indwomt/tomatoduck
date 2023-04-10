@@ -36,7 +36,7 @@ return (
             type='text'
             value={prompt}
             onChange={e=>setPrompt(e.target.value)}
-        /><span>Powered by Open AI</span>
+        /><span className='tag'>Powered by Open AI</span>
         </div>
         <button className='start-btn mt-3  ' type='submit'>Submit</button>
     </Form>
