@@ -3,8 +3,8 @@ import icon from '../assets/tomato-24.svg';
 // import { Nav, Container} from 'reactstrap';
 import { Link } from 'react-router-dom'
 import { Modal, Tab, Nav,} from 'react-bootstrap'
-import SignUpForm from './Signup';
-import LoginForm from './Login';
+import SignUpForm from './signup';
+import LoginForm from './login';
 import Auth from '../utils/auth'
 
 const Header = () => {
