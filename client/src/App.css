@@ -94,6 +94,9 @@ background-color: bisque;
 
 
 .chatbox{
+  height: 400px;
+  width:400px;
+  border-style: dotted;
   border-style: dotted;
 
 }
@@ -111,10 +114,18 @@ background-color: bisque;
   width: 40%;
 }
 .duck{
-  background-color: #F86E51;
-  width: 45%;
+  height: 40%;
+  width: 40%;
 }
 .duck-cont{
   display: flex;
-
+  justify-items: center;
+}
+.main{
+  display: flex;
+}
+.input{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }

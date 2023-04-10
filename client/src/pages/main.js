@@ -6,9 +6,12 @@ import ChatBot from '../components/Chatbot';
 const Main = () => {
     return (
         <>
-        <Timer/>
-        <Tasks/>
+        <div className='main'>
         <ChatBot/>
+        <Timer/>
+        </div>
+        <Tasks/>
+        
         </>
     )
 }
