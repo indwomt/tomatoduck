@@ -1,20 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import TaskCard from './task-card'
 import Auth from '../utils/auth'
-import { saveTodo } from '../utils/API';
+import { saveTodo, getMe } from '../utils/API';
 
 
 export default function Tasks() {
   const [show, setShow] = useState(false);
   const [todos, setTodo] = useState({todo:``})
- 
-
+  const [userData, setUserData] = useState({})
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  useEffect(() => {
+    const getUser= async () => {
+      try {
+        const token = Auth.loggedIn() ? Auth.getToken() : null
+        if(!token){
+          return false
+        }
+        const response = await getMe(token)
+        if(!response.ok){
+          throw new Error(`error in the mirror`)
+        }
+        const user = await response.json()
+        setUserData(user)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+    getUser()
+  }, [])
+console.log(userData)
   const handleInput = (e) => {
    const {name, value} = e.target
    setTodo({todos, [name]:value})
