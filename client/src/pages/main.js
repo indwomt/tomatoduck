@@ -7,10 +7,15 @@ const Main = () => {
     return (
         <>
         <div className='main'>
-        <ChatBot/>
+       
+        
+
         <Timer/>
         </div>
+        <div className='container justify-content-between d-flex'>
         <Tasks/>
+        <ChatBot/>
+        </div>
         
         </>
     )

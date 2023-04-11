@@ -6,12 +6,19 @@ import TaskCard from './task-card'
 import Auth from '../utils/auth'
 import { saveTodo } from '../utils/API';
 
+
 export default function Tasks() {
   const [show, setShow] = useState(false);
-  const [todo, setTodo] = useState('')
+  const [todo, setTodo] = useState({})
+ 
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const handleInput = (e) => {
+   const {name, value} = e.target
+   setTodo({...todo, [name]:value})
+  }
 
   const handleFormSubmit = async (event) => {
     event.preventDefault()
@@ -23,11 +30,15 @@ export default function Tasks() {
     }
     try {
       
-      const response = await (await saveTodo(todo, token)).json()
+      const response = await saveTodo(todo, token)
+
+      const {tasks} = await response.json();
+
+      console.log(response)
 
       
 
-      console.log(response)
+      
       
   
 
@@ -43,7 +54,7 @@ export default function Tasks() {
    }
 
   return (
-    <div className='container col-6 d-flex-col justify-content-center my-5'>
+    <div className=' col-6 d-flex-col my-5'>
       <div className='task-header col-12 justify-content-between d-flex flex-wrap'>
         {/* add something like todo[i].length to get the tasks needed */}
         <h2 className='col-md-4 flex-wrap'>Tasks Left: 0</h2>
@@ -65,7 +76,8 @@ export default function Tasks() {
             type='text' 
             placeholder='Your To-do Task' 
             value={todo}
-            onChange={e=>setTodo(e.target.value)}
+            name='todo'
+            onChange={handleInput}
             />
           </Form.Group>
           <Modal.Footer>
