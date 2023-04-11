@@ -9,7 +9,7 @@ import { saveTodo } from '../utils/API';
 
 export default function Tasks() {
   const [show, setShow] = useState(false);
-  const [todo, setTodo] = useState({})
+  const [todos, setTodo] = useState({todo:``})
  
 
   const handleClose = () => setShow(false);
@@ -17,24 +17,25 @@ export default function Tasks() {
 
   const handleInput = (e) => {
    const {name, value} = e.target
-   setTodo({...todo, [name]:value})
+   setTodo({todos, [name]:value})
   }
 
   const handleFormSubmit = async (event) => {
     event.preventDefault()
     console.log(`click`)
-    console.log(todo)
+    console.log(todos)
     const token = Auth.loggedIn() ? Auth.getToken() : null
     if(!token){
       return false
     }
     try {
       
-      const response = await saveTodo(todo, token)
-
-      const {tasks} = await response.json();
-
-      console.log(response)
+      const response = await saveTodo(todos, token)
+      if(!response.ok){
+        throw new Error(`there's trouble`)}
+        
+      setTodo({todo:``})
+     
 
       
 
@@ -75,9 +76,9 @@ export default function Tasks() {
             <Form.Control 
             type='text' 
             placeholder='Your To-do Task' 
-            value={todo}
             name='todo'
             onChange={handleInput}
+            value={todos.todo}
             />
           </Form.Group>
           <Modal.Footer>
