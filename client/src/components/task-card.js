@@ -11,13 +11,14 @@ export default function taskCard(props) {
 
 
 
-
-    return(
+console.log(props.user[0].todo)
+    
+{props.user.map((tasks) => console.log(tasks.todo))}
+return(
         <div className="container col-6">
-
-        
         <Card>
-            <Card.Body>I am a task to do!!!
+            <Card.Body>
+                {/* <p>{props.todo}</p> */}
                 <ArrowRight />
             </Card.Body>
         </Card>
