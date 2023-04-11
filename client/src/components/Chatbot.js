@@ -28,7 +28,7 @@ const handleQuestionSubmit = async (e) => {
 }}
 
 return (
-    <Container className="chatbox p-3">
+    <div className="col-4 chatbox p-3">
     
     <Form onSubmit={handleQuestionSubmit}>
         <div className='input'>
@@ -47,7 +47,7 @@ return (
     : (<p></p>)
     }
     </div>
-    </Container>
+    </div>
 )
 } 
 export default ChatBot
