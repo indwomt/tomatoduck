@@ -10,6 +10,7 @@ import { saveTodo, getMe } from '../utils/API';
 export default function Tasks() {
   const [show, setShow] = useState(false);
   const [todos, setTodo] = useState({todo:``})
+  // this is the empty array to pull the object data to populate the tasks
   const [userData, setUserData] = useState({})
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -42,7 +43,6 @@ console.log(userData)
   const handleFormSubmit = async (event) => {
     event.preventDefault()
     console.log(`click`)
-    console.log(todos)
     const token = Auth.loggedIn() ? Auth.getToken() : null
     if(!token){
       return false
@@ -72,6 +72,7 @@ console.log(userData)
 
 
    }
+const userArray = userData.todos
 
   return (
     <div className=' col-6 d-flex-col my-5'>
@@ -83,7 +84,9 @@ console.log(userData)
         </button>
       </div>
       <div className='task-container'>
-        <TaskCard />
+
+      
+        <TaskCard user = {userArray}/>
       </div>
 
       <Modal show={show} onHide={handleClose}>
