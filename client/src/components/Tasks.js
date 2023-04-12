@@ -34,7 +34,7 @@ export default function Tasks() {
     }
     getUser()
   }, [])
-console.log(userData)
+console.log("data",userData )
   const handleInput = (e) => {
    const {name, value} = e.target
    setTodo({todos, [name]:value})
@@ -72,6 +72,8 @@ console.log(userData)
 
 
    }
+   console.log("DATA", userData)
+   
 const userArray = userData.todos
 
   return (

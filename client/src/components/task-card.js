@@ -7,19 +7,23 @@ import {Trash, Pen, ArrowRight} from 'react-bootstrap-icons'
 
 
 
-export default function taskCard(props) {
+export default function taskCard({user}) {
 
 
 
-console.log(props.user[0].todo)
+
     
-{props.user.map((tasks) => console.log(tasks.todo))}
+
 return(
         <div className="container col-6">
         <Card>
             <Card.Body>
-                {/* <p>{props.todo}</p> */}
-                <ArrowRight />
+                {user.map((tasks) => 
+                     (
+                    <p>{tasks.todo}</p>
+                    )
+                )}
+                
             </Card.Body>
         </Card>
 
