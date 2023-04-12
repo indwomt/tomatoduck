@@ -17,6 +17,6 @@ router.route(`/me`).get(authMiddleware, getUser)
 // .../api/users/todos
 router.route(`/todos`).post(authMiddleware, saveTodo)
 // .../api/users/todos/:todoId
-router.route(`/todos/:todoId`).delete(authMiddleware, deleteTodo)
+router.route(`/todos/:_id`).delete(authMiddleware, deleteTodo)
 
 module.exports = router
