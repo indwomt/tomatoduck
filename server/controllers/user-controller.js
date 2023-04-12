@@ -44,14 +44,15 @@ module.exports = {
             return res.status(400).json(error)
         }
     },
-    async deleteTodo({user, params}, res){
-        const rmTodo = await User.findOneAndUpdate(
-            {_id: user._id},
-            {$pull: {todos: {todoId: params.todoId}}},
+    async deleteTodo({params}, res){
+        const taskDel = await Todo.findByIdAndRemove({_id: params._id})
+            const rmTodo = await User.findOneAndUpdate(
+            {todos: params._id},
+            {$pull: {todos: params._id}},
             {new: true}
         )
         !rmTodo
             ? res.status(400).json({message: `no item found`})
-            : res.json(rmTodo)
+            : res.json({message: `task deleted`})
     }
 }
