@@ -14,7 +14,7 @@ export default function Tasks() {
   const [userData, setUserData] = useState({})
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+//use effect grabs user object from db in order to acces todo array fro our saved tasks
   useEffect(() => {
     const getUser= async () => {
       try {
@@ -33,8 +33,7 @@ export default function Tasks() {
       }
     }
     getUser()
-  }, [])
-console.log("data",userData )
+  })
   const handleInput = (e) => {
    const {name, value} = e.target
    setTodo({todos, [name]:value})
@@ -42,40 +41,20 @@ console.log("data",userData )
 
   const handleFormSubmit = async (event) => {
     event.preventDefault()
-    console.log(`click`)
     const token = Auth.loggedIn() ? Auth.getToken() : null
     if(!token){
       return false
     }
     try {
-      
       const response = await saveTodo(todos, token)
       if(!response.ok){
         throw new Error(`there's trouble`)}
-        
       setTodo({todo:``})
-     
-
-      
-
-      
-      
-  
-
     } catch (error) {
       console.error(error)
     }
-
-    
-
-    
-
-
-   }
-   console.log("DATA", userData)
-   
+   } 
 const userArray = userData.todos
-
   return (
     <div className=' col-6 d-flex-col my-5'>
       <div className='task-header col-12 justify-content-between d-flex flex-wrap'>
@@ -85,12 +64,9 @@ const userArray = userData.todos
           Add Task
         </button>
       </div>
-      <div className='task-container'>
-
-      
+      <div className='task-container'>      
         <TaskCard user = {userArray}/>
       </div>
-
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Add a new task</Modal.Title>
