@@ -39,7 +39,7 @@ export const saveTodo = (todoData, token) => {
 }
 
 export const deleteTodo = (todoData, token) => {
-    return fetch(`/api/users/todos/:todoId`, {
+    return fetch(`/api/users/todos/${todoData}`, {
         method: 'DELETE',
         headers: {
             authorization: `Bearer ${token}`
