@@ -17,9 +17,9 @@ const Header = () => {
   return (
     <div className='container'>
       <nav className='navbar d-flex'>
-        <Link to='/'>
+        <Link className='link-unstyled d-flex' to='/'>
           <img src={icon} alt='Tomato icon' />
-          TomatoDuck
+          <h2 className='d-flex align-self-center'>TomatoDuck</h2>
         </Link>
         {Auth.loggedIn() ? (<>
         <div className='container d-flex justify-content-end'>
