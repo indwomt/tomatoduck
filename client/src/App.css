@@ -167,11 +167,13 @@ outline-offset: 0px;
   background-color: #F4DAA2;
 }
 
-.task-section{
+.task-section,
+.timer-box{
   background-color: lightsalmon;
   border: 3px solid #EAECC5;
 border-radius: 15px;
  -webkit-box-shadow: 5px 5px 15px -6px #000000; 
 box-shadow: 5px 5px 15px -6px #000000;
 padding: 20px;
+margin-right: 30px;
 }
