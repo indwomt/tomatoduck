@@ -28,7 +28,7 @@ const handleQuestionSubmit = async (e) => {
 }}
 
 return (
-    <div className="col-4 chatbox p-3">
+    <div className="col-12 chatbox p-3">
     
     <Form onSubmit={handleQuestionSubmit}>
         <div className='input'>

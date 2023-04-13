@@ -5,19 +5,20 @@ import ChatBot from '../components/Chatbot';
 
 const Main = () => {
     return (
-        <>
+      <>
         <div className='main'>
-       
-        
-
-        <Timer/>
+          <Timer />
         </div>
-        <div className='container justify-content-between d-flex'>
-        <Tasks/>
-        <ChatBot/>
+        <div className='container d-flex justify-content-between flex-wrap'>
+          <div className='col-md-6 col-12'>
+            <Tasks />
+          </div>
+          <div className='col-md-6 col-12'>
+            <ChatBot />
+          </div>
         </div>
-        
-        </>
+      </>
     )
-}
+  }
+  
 export default Main

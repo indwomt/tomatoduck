@@ -56,7 +56,7 @@ export default function Tasks() {
    } 
 const userArray = userData.todos
   return (
-    <div className=' col-6 d-flex-col my-5'>
+    <div className=' col-12 d-flex-col my-5'>
       <div className='task-header col-12 justify-content-between d-flex flex-wrap'>
         {/* add something like todo[i].length to get the tasks needed */}
         <h2 className='col-md-4 flex-wrap'>Tasks Left: 0</h2>
