@@ -44,7 +44,7 @@
 
 #root{
   background-color: #F86E51;
-  height: 100em;
+  height: 100%;
 }
 
 
@@ -86,6 +86,7 @@ background-color: bisque;
 
 .task-card{
   background-color: rgb(81, 31, 70);
+  box-shadow: #333;
 }
 
 .link-unstyled {
@@ -98,12 +99,16 @@ background-color: bisque;
 
 
 
-.chatbox{
-  height: 400px;
-  width:800px;
+.chatbox,
+.task-box{
+  /* height: 600px;
+  width:800px; */
   border-style: dotted;
- 
-
+  background-color: lightsalmon;
+  border: 3px solid #EAECC5;
+border-radius: 15px;
+ -webkit-box-shadow: 5px 5px 15px -6px #000000; 
+box-shadow: 5px 5px 15px -6px #000000
 }
 
 .response {
@@ -111,9 +116,14 @@ background-color: bisque;
   margin: 7px;
   padding: 10px;
   border-radius: 25px;
-  background-color: aqua;
+  background-color: lightyellow;
   color: black;
   animation: forwards;
+  -webkit-border-radius: 40px 40px 40px 0px;
+-moz-border-radius: 40px 40px 40px 0px;
+border-radius: 40px 40px 40px 0px;
+outline: 5px ridge #F4DAA2;
+outline-offset: 0px;
 }
 .question{
   width: 40%;
@@ -151,4 +161,19 @@ background-color: bisque;
 
 .task-text{
   font-size:larger;
+}
+
+.task-box{
+  background-color: #F4DAA2;
+}
+
+.task-section,
+.timer-box{
+  background-color: lightsalmon;
+  border: 3px solid #EAECC5;
+border-radius: 15px;
+ -webkit-box-shadow: 5px 5px 15px -6px #000000; 
+box-shadow: 5px 5px 15px -6px #000000;
+padding: 20px;
+margin-right: 30px;
 }

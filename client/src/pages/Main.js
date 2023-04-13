@@ -9,11 +9,11 @@ const Main = () => {
         <div className='main'>
           <Timer />
         </div>
-        <div className='container d-flex justify-content-between flex-wrap'>
-          <div className='col-md-6 col-12'>
+        <div className='container d-flex justify-content-around flex-wrap'>
+          <div className='col-md-5 col-12 '>
             <Tasks />
           </div>
-          <div className='col-md-6 col-12'>
+          <div className='col-md-5 col-12'>
             <ChatBot />
           </div>
         </div>
