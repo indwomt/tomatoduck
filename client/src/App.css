@@ -133,3 +133,17 @@ background-color: bisque;
   width: 50%;
   padding-left: 5px;
 }
+
+.task-box{
+  height: 20px;
+  width: 400px;
+}
+
+.delete-btn{
+  width: 50px;
+  height:50px
+}
+
+.task-text{
+  font-size:larger;
+}

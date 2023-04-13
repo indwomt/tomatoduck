@@ -16,16 +16,18 @@ const Header = () => {
 
   return (
     <div className='container'>
-      <nav className='navbar'>
+      <nav className='navbar d-flex'>
         <Link to='/'>
           <img src={icon} alt='Tomato icon' />
           TomatoDuck
         </Link>
         {Auth.loggedIn() ? (<>
-          <Link to='/preferences'>
+        <div className='container d-flex justify-content-end'>
+          <Link className='mx-2' to='/preferences'>
             <button className='login-btn'>User Settings</button>
           </Link>
-          <button className='login-btn' onClick={Auth.logout}>Log Out</button></>
+          <button className='login-btn' onClick={Auth.logout}>Log Out</button></div>
+          </>
 
         ) : (
         <button className='login-btn' onClick={()=>setModal(true)}>
