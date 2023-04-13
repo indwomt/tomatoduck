@@ -11,8 +11,8 @@ const Header = () => {
 
   return (
     <>
-      <div className='container'>
-        <nav className='navbar d-flex justify-content-between align-items-center'>
+      <div className='container d-flex-col flex-wrap'>
+        <nav className='navbar d-flex justify-content-between align-items-center flex-wrap'>
           <div className='d-flex align-items-center'>
             <Link className='link-unstyled d-flex' to='/'>
               <img src={icon} alt='Tomato icon' />
