@@ -179,3 +179,7 @@ padding: 20px;
 margin-right: 30px;
 background-color: rgba(255, 160, 122, 0.5);
 }
+
+.user-pref-box{
+  height: 100vh;
+}
