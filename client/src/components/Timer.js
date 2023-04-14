@@ -14,7 +14,9 @@ export default function Timer() {
     restart,
   } = useTimer({
     expiryTimestamp: new Date().getTime() + duration * 1000,
-    onExpire: () => console.warn('onExpire called'),
+    onExpire: () => {
+      console.warn('onExpire called')
+    },
     autoStart: false
   });
 
