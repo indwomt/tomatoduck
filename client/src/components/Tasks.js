@@ -10,6 +10,7 @@ import { deleteTodo } from '../utils/API';
 export default function Tasks() {
   const [show, setShow] = useState(false);
   const [todos, setTodo] = useState({todo:``})
+  
   // this is the empty array to pull the object data to populate the tasks
   const [userData, setUserData] = useState({})
   const handleClose = () => setShow(false);
@@ -103,7 +104,7 @@ useEffect(() => {
             <Button variant='secondary' onClick={handleClose}>
               Close
             </Button>
-            <Button variant='primary'  type="submit">
+            <Button disabled={!todos.todo} variant='primary'  type="submit">
               Save Changes
             </Button>
           </Modal.Footer>
