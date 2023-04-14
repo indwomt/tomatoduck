@@ -47,6 +47,16 @@ export const deleteTodo = (todoData, token) => {
     })
 }
 
+export const editTodo = (todo, token) => {
+    return fetch(`/api/users/todos/${todo}`, {
+        method: `PUT`,
+        headers: {
+            authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify(todo)
+
+    })
+}
 export const askChatBot = (prompt) => {
     const requestOptions = {
         method: "POST",
