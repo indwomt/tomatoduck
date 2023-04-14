@@ -53,7 +53,6 @@ export default function Tasks() {
     }
    } 
 const userArray = userData.todos
-const check = Object.keys(userData).length
 useEffect(() => {
   const getUser= async () => {
     try {
@@ -89,7 +88,8 @@ useEffect(() => {
         <Modal.Header closeButton>
           <Modal.Title>Add a new task</Modal.Title>
         </Modal.Header>
-        <Form onSubmit={handleFormSubmit}>
+        {Auth.loggedIn()
+          ? (<Form onSubmit={handleFormSubmit}>
           <Form.Group className='mb-3' controlId='formBasicEmail'>
             <Form.Control 
             type='text' 
@@ -107,7 +107,10 @@ useEffect(() => {
               Save Changes
             </Button>
           </Modal.Footer>
-        </Form>
+        </Form>)
+        : (
+          <h1 className='m-3'>Please Sign in to add tasks</h1>
+        )}
       </Modal>
     </div>
   );

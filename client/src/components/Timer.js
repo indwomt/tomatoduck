@@ -7,8 +7,6 @@ export default function Timer() {
   let {
     seconds,
     minutes,
-    isRunning,
-    start,
     pause,
     resume,
     restart,
