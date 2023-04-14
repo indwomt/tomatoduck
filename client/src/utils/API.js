@@ -50,10 +50,7 @@ export const deleteTodo = (todoData, token) => {
 export const askChatBot = (prompt) => {
     const requestOptions = {
         method: "POST",
-        headers: { 
-            "Content-Type": "application/json",
-            authorization: `Bearer ${token}`
-            },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt }),
       }
       return fetch(`/api/chatbot`, requestOptions)
