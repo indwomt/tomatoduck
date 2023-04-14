@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import TaskCard from './task-card'
 import Auth from '../utils/auth'
 import { saveTodo, getMe } from '../utils/API';
-
+import { deleteTodo } from '../utils/API';
 
 export default function Tasks() {
   const [show, setShow] = useState(false);
@@ -14,31 +14,29 @@ export default function Tasks() {
   const [userData, setUserData] = useState({})
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-//use effect grabs user object from db in order to acces todo array fro our saved tasks
-  useEffect(() => {
-    const getUser= async () => {
-      try {
-        const token = Auth.loggedIn() ? Auth.getToken() : null
-        if(!token){
-          return false
-        }
-        const response = await getMe(token)
-        if(!response.ok){
-          throw new Error(`error in the mirror`)
-        }
-        const user = await response.json()
-        setUserData(user)
-      } catch (error) {
-        console.error(error)
-      }
+
+  const deleteTask = async (id) => {
+    const token = Auth.loggedIn() ? Auth.getToken() : null 
+    if(!token){
+        return false
     }
-    getUser()
-  })
+    try {
+        const del = await deleteTodo(id, token)
+        if(!del.ok){
+          throw new Error(`task not deleting`)
+        }
+        const updatedUser = await del.json()
+        setTodo(updatedUser)
+    } catch (error) {
+        console.log(error)
+    }
+}
+//use effect grabs user object from db in order to acces todo array fro our saved tasks
+  
   const handleInput = (e) => {
    const {name, value} = e.target
    setTodo({todos, [name]:value})
   }
-
   const handleFormSubmit = async (event) => {
     event.preventDefault()
     const token = Auth.loggedIn() ? Auth.getToken() : null
@@ -55,6 +53,26 @@ export default function Tasks() {
     }
    } 
 const userArray = userData.todos
+const check = Object.keys(userData).length
+useEffect(() => {
+  const getUser= async () => {
+    try {
+      const token = Auth.loggedIn() ? Auth.getToken() : null
+      if(!token){
+        return false
+      }
+      const response = await getMe(token)
+      if(!response.ok){
+        throw new Error(`error in the mirror`)
+      }
+      const user = await response.json()
+      setUserData(user)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+  getUser()
+}, [todos])
   return (
     <div className=' task-section col-12 d-flex-col my-5'>
       <div className='task-header col-12 justify-content-between d-flex flex-wrap'>
@@ -65,7 +83,7 @@ const userArray = userData.todos
         </button>
       </div>
       <div className='task-container'>      
-        <TaskCard user = {userArray}/>
+        <TaskCard user = {userArray} deleteTask={deleteTask}/>
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
