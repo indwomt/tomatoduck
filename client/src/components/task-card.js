@@ -1,26 +1,9 @@
-import react, {useEffect, useState} from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button'
-import {Trash, Pen, ArrowRight} from 'react-bootstrap-icons'
-// import { deleteTodo } from '../utils/API';
-import Auth from '../utils/auth'
+import {Trash} from 'react-bootstrap-icons'
 
 export default function taskCard({user, deleteTask}) {
-// console.log(user)
-// const deleteTask = async (id) => {
-//     const token = Auth.loggedIn() ? Auth.getToken() : null 
-//     if(!token){
-//         return false
-//     }
-//     try {
-//         const del = await deleteTodo(id, token)
-//         if(!del.ok){
-//           throw new Error(`task not deleting`)
-//         }
-//     } catch (error) {
-//         console.log(error)
-//     }
-// }
+
 return(
     <div className="container col-10">
     {user

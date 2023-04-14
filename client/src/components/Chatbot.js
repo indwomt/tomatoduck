@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Form, Container } from 'react-bootstrap'
+import { Form} from 'react-bootstrap'
 import {askChatBot} from '../utils/API'
 import duck from '../images/duck.png'
 

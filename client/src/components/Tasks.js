@@ -10,6 +10,7 @@ import { deleteTodo } from '../utils/API';
 export default function Tasks() {
   const [show, setShow] = useState(false);
   const [todos, setTodo] = useState({todo:``})
+  
   // this is the empty array to pull the object data to populate the tasks
   const [userData, setUserData] = useState({})
   const handleClose = () => setShow(false);
@@ -53,7 +54,6 @@ export default function Tasks() {
     }
    } 
 const userArray = userData.todos
-const check = Object.keys(userData).length
 useEffect(() => {
   const getUser= async () => {
     try {
@@ -89,7 +89,8 @@ useEffect(() => {
         <Modal.Header closeButton>
           <Modal.Title>Add a new task</Modal.Title>
         </Modal.Header>
-        <Form onSubmit={handleFormSubmit}>
+        {Auth.loggedIn()
+          ? (<Form onSubmit={handleFormSubmit}>
           <Form.Group className='mb-3' controlId='formBasicEmail'>
             <Form.Control 
             type='text' 
@@ -103,11 +104,14 @@ useEffect(() => {
             <Button variant='secondary' onClick={handleClose}>
               Close
             </Button>
-            <Button variant='primary'  type="submit">
+            <Button disabled={!todos.todo} variant='primary'  type="submit">
               Save Changes
             </Button>
           </Modal.Footer>
-        </Form>
+        </Form>)
+        : (
+          <h1 className='m-3'>Please Sign in to add tasks</h1>
+        )}
       </Modal>
     </div>
   );
