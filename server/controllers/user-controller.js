@@ -44,6 +44,16 @@ module.exports = {
             return res.status(400).json(error)
         }
     },
+    async updateTodo({params, body}, res){
+        const updated = await Todo.findByIdAndUpdate(
+            {_id: params._id},
+            {$set: body},
+            {new: true}
+        )
+        !updated
+            ? res.status(404).json({message: `thought not found`})
+            : res.json(updated)
+    },
     async deleteTodo({params}, res){
         const taskDel = await Todo.findByIdAndRemove({_id: params._id})
             const rmTodo = await User.findOneAndUpdate(

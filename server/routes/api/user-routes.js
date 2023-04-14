@@ -4,7 +4,8 @@ const {
     createUser,
     login,
     saveTodo,
-    deleteTodo
+    deleteTodo,
+    updateTodo
 } =require(`../../controllers/user-controller`)
 
 const { authMiddleware }= require(`../../utils/auth`)
@@ -17,6 +18,6 @@ router.route(`/me`).get(authMiddleware, getUser)
 // .../api/users/todos
 router.route(`/todos`).post(authMiddleware, saveTodo)
 // .../api/users/todos/:todoId
-router.route(`/todos/:_id`).delete(authMiddleware, deleteTodo)
+router.route(`/todos/:_id`).delete(authMiddleware, deleteTodo).put(authMiddleware, updateTodo)
 
 module.exports = router
