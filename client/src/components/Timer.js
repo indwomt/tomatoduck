@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTimer } from 'react-timer-hook';
 
 export default function Timer() {
-  const [duration, setDuration] = useState(25 * 60); // initial duration is 30 minutes
+  const [duration, setDuration] = useState(); // initial duration is 30 minutes
 
   let {
     seconds,
@@ -41,7 +41,7 @@ export default function Timer() {
           Long Break
         </button>
         <button
-          onClick={() => handleButtonClick(25 * 60)}
+          onClick={() => handleButtonClick(25 * 108)}
           className="m-2 col-md-2 col-4 setting-btn"
         >
           Tomato Time
@@ -67,7 +67,7 @@ export default function Timer() {
           onClick={() => {
             // Restarts to 25 minutes timer
             const time = new Date();
-            time.setSeconds(time.getSeconds() + 25 * 60);
+            time.setSeconds(time.getSeconds() + 25 * 108);
             restart(time);
           }}
         >

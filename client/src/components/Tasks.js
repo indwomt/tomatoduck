@@ -77,7 +77,7 @@ useEffect(() => {
     <div className=' task-section col-12 d-flex-col my-5'>
       <div className='task-header col-12 justify-content-between d-flex flex-wrap'>
         {/* add something like todo[i].length to get the tasks needed */}
-        <h2 className='col-md-4 flex-wrap'>Tasks Left: {userArray.length}</h2>
+        <h2 className='col-md-4 flex-wrap'>Tasks Left: {!userArray.length ? `0` : userArray.length}</h2>
         <button className='add-task-btn col-md-4 flex-wrap' onClick={handleShow}>
           Add Task
         </button>
