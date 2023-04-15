@@ -26,7 +26,7 @@ export default function Timer() {
   };
 
   return (
-    <div className="container timer-box">
+    <div className="container col-12 d-flex-col timer-box">
       <div className="timer-settings d-flex justify-content-center flex-wrap">
         <button
           onClick={() => handleButtonClick(5 * 60)}
@@ -55,7 +55,7 @@ export default function Timer() {
         </span>
       </div>
       <div className="container start-btn-box d-flex justify-content-center"></div>
-      <div className="hook-btns container col-8 mx-auto my-5 d-flex justify-content-around flex-wrap">
+      <div className="hook-btns container col-6 mx-auto my-3 d-flex justify-content-around flex-wrap">
         <button className="timer-btn m-2 col-md-2 col-4" onClick={pause}>
           Pause
         </button>

@@ -4,12 +4,30 @@ import Main from './pages/Main';
 import Footer from './components/Footer'
 import UserPref from './pages/User-preferences';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-// import bootstrap from 'react-bootstrap'
+import useLocalStorage from 'use-local-storage'
+import { Toggle2Off } from 'react-bootstrap-icons';
+import {useState} from 'react'
+
+
+
 
 function App() {
+
+  const [theme, setTheme] = useLocalStorage('theme', 'light');
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const switchTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    setIsDarkMode(!isDarkMode);
+  };
+
+
   return (
     <Router>
-      <div className="App">
+      <div className="App" data-theme={isDarkMode ? 'dark' : 'light'}>
+        <Toggle2Off className={`toggle2off ${isDarkMode ? 'dark' : 'light'} `}
+        onClick={switchTheme}/>
         <Header />
       
         <Routes>
