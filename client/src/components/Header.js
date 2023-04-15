@@ -6,8 +6,11 @@ import SignUpForm from './Signup';
 import LoginForm from './Login';
 import Auth from '../utils/auth';
 
+
 const Header = () => {
   const [modal, setModal] = useState(false);
+
+
 
   return (
     <>
@@ -18,22 +21,28 @@ const Header = () => {
               <img src={icon} alt='Tomato icon' />
               <h2 className='d-flex align-self-center'>TomatoDuck</h2>
             </Link>
+            
           </div>
+          
           {Auth.loggedIn() ? (
-            <div className='d-flex align-items-center'>
+            <div className='d-flex align-items-center justify-content-end'>
               <Link className='mx-2' to='/preferences'>
                 <button className='login-btn'>User Settings</button>
               </Link>
-              <button className='login-btn' onClick={Auth.logout}>
+              <button className='login-btn mx-2' onClick={Auth.logout}>
                 Log Out
               </button>
+              
             </div>
           ) : (
             <button className='login-btn' onClick={() => setModal(true)}>
               Sign In/Sign Up
             </button>
+              
           )}
+          
         </nav>
+        
       </div>
 
       <Modal

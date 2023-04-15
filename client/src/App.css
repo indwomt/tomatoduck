@@ -37,18 +37,32 @@
   }
 } */
  
+
+
+
+
+
+.App {
+  --background-color: #F86E51;
+  --color: #000;
+  --border: grey;
+  background-color: var(--background-color);
+  color: var(--color);
+  height: 100%;
+}
+
 [data-theme='dark'] {
   --background-color: #000;
   --color: #fff;
   --border: grey;
 }
 
+.toggle2off.light {
+  color: #fff;
+}
 
-
-
-.App{
-  background-color: #F86E51;
-  height: 100%;
+.toggle2off.dark {
+  color: #000;
 }
 
 
@@ -105,15 +119,11 @@ background-color: bisque;
 
 .chatbox,
 .task-box{
-  /* height: 600px;
-  width:800px; */
   border-style: dotted;
-  /* background-color: lightsalmon; */
   border: 3px solid #EAECC5;
-border-radius: 15px;
+  border-radius: 15px;
  -webkit-box-shadow: 5px 5px 15px -6px #000000; 
-box-shadow: 5px 5px 15px -6px #000000;
-/* background-color: rgba(255, 160, 122, 0.5) */
+  box-shadow: 5px 5px 15px -6px #000000;
 }
 
 .response {
@@ -186,4 +196,9 @@ margin-right: 30px;
 
 .user-pref-box{
   height: 100vh;
+}
+
+.toggle2off{
+  width: 50px;
+  height:40px
 }
