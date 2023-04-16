@@ -26,9 +26,9 @@ const Header = () => {
           
           {Auth.loggedIn() ? (
             <div className='d-flex align-items-center justify-content-end'>
-              <Link className='mx-2' to='/preferences'>
+              {/* <Link className='mx-2' to='/preferences'>
                 <button className='login-btn'>User Settings</button>
-              </Link>
+              </Link> */}
               <button className='login-btn mx-2' onClick={Auth.logout}>
                 Log Out
               </button>
