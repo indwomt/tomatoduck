@@ -28,25 +28,13 @@ export default function Timer() {
   return (
     <div className="container col-12 d-flex-col timer-box">
       <div className="timer-settings d-flex justify-content-center flex-wrap">
-        {timerTime.map( el => (<button key={el}
+        {timerTime.map( el => (<button key={el.time}
           onClick={() => handleButtonClick(el.time * 60)}
           className="m-2 col-md-2 col-4 setting-btn"
         >
           {el.name}
         </button>))
         }
-        {/* <button
-          onClick={() => handleButtonClick(10 * 60)}
-          className="m-2 col-md-2 col-4 setting-btn"
-        >
-          Long Break
-        </button>
-        <button
-          onClick={() => handleButtonClick(25 * 60)}
-          className="m-2 col-md-2 col-4 setting-btn"
-        >
-          Tomato Time
-        </button> */}
       </div>
       <div className="timer container col-6 d-flex justify-content-center bordered">
         <span className="timer-display">{minutes}</span>
@@ -66,7 +54,6 @@ export default function Timer() {
         <button
           className="timer-btn m-2 col-md-2 col-4"
           onClick={() => {
-            // Restarts to 25 minutes timer
             const time = new Date();
             time.setSeconds(time.getSeconds() + duration );
             restart(time);

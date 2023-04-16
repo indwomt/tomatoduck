@@ -15,8 +15,8 @@ return(
             </div>
             <div className="col-auto p-2 align-items-center">
             <Button className='delete-btn' onClick={() => deleteTask(tasks._id)}>
-  <Trash />
-</Button>
+              <Trash />
+            </Button>
             </div>
           </div>
         </Card>
