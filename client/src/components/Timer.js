@@ -3,7 +3,7 @@ import { useTimer } from 'react-timer-hook';
 
 export default function Timer() {
   const [duration, setDuration] = useState(25 * 60); // initial duration is 30 minutes
-  let timerTime = [5, 10, 25]
+  let timerTime = [{name: `Short Break`, time:5}, {name: `Long Break`, time:10}, {name: `Tomato Time`, time:25}]
   let {
     seconds,
     minutes,
@@ -29,10 +29,10 @@ export default function Timer() {
     <div className="container col-12 d-flex-col timer-box">
       <div className="timer-settings d-flex justify-content-center flex-wrap">
         {timerTime.map( el => (<button key={el}
-          onClick={() => handleButtonClick(el * 60)}
+          onClick={() => handleButtonClick(el.time * 60)}
           className="m-2 col-md-2 col-4 setting-btn"
         >
-          Short Break
+          {el.name}
         </button>))
         }
         {/* <button
