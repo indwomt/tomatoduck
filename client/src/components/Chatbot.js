@@ -1,18 +1,7 @@
 import { useState } from 'react'
 import { Form} from 'react-bootstrap'
 import {askChatBot} from '../utils/API'
-import duck from '../images/duck.png'
-
-// const configuration = new Configuration({
-//   apiKey: process.env.OPENAI_API_KEY,
-// });
-// const openai = new OpenAIApi(configuration);
-
-// const completion = await openai.createCompletion({
-//   model: "text-davinci-003",
-//   prompt: "Hello world",
-// });
-// console.log(completion.data.choices[0].text);
+import duck from '../assets/duck.png'
 
 const ChatBot = () => {
     const [cbResponse, setCbReponse] = useState(``)

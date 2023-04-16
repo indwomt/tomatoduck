@@ -7,11 +7,6 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import useLocalStorage from 'use-local-storage'
 import { Toggle2Off } from 'react-bootstrap-icons';
 import {useState} from 'react'
-import Auth from './utils/auth';
-
-
-
-
 
 function App() {
 
@@ -23,9 +18,6 @@ function App() {
     setTheme(newTheme);
     setIsDarkMode(!isDarkMode);
   };
- console.log(Auth.loggedIn())
-console.log(Date.now() / 1000)
-// console.log(Auth.isTokenExpired(Auth.getToken()))
 
   return (
     <Router>
