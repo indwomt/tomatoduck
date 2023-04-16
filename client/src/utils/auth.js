@@ -7,15 +7,15 @@
         return !!token && !this.isTokenExpired(token)
     }
     isTokenExpired = (token) => { //check if tokens expired
-        try {
+        
             const decoded = decode(token)
-            if(decoded.exp < Date.now() /10000){
+            let currentTime = Date.now() /1000
+            if(decoded.exp < currentTime){
+                localStorage.removeItem('id_token')
                 return true
             } else return false
-        } catch (error) {
-            return false
         }
-    }
+        
     getToken = () => localStorage.getItem(`id_token`)
     login = (token) => {
         localStorage.setItem(`id_token`, token)

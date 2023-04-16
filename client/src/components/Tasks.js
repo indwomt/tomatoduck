@@ -58,9 +58,11 @@ useEffect(() => {
   const getUser= async () => {
     try {
       const token = Auth.loggedIn() ? Auth.getToken() : null
+      
       if(!token){
         return false
       }
+      Auth.isTokenExpired(token)
       const response = await getMe(token)
       if(!response.ok){
         throw new Error(`error in the mirror`)

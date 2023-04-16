@@ -27,6 +27,17 @@ export const loginUser = (userData) => {
     })
 }
 
+export const editUser = (userData, token) => {
+    return fetch(`/api/users/${userData}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify(userData)
+    })
+}
+
 export const saveTodo = (todoData, token) => {
     return fetch(`/api/users/todos`, {
         method: 'POST',
