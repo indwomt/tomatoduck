@@ -5,12 +5,15 @@ const {
     login,
     saveTodo,
     deleteTodo,
-    updateTodo
+    updateTodo,
+    updateUser
 } =require(`../../controllers/user-controller`)
 
 const { authMiddleware }= require(`../../utils/auth`)
 // .../api/users
 router.route(`/`).post(createUser)
+// .../api/users/:id
+router.route(`/:_id`).put(authMiddleware, updateUser)
 // .../api/users/login
 router.route(`/login`).post(login)
 // .../api/users/me

@@ -17,6 +17,15 @@ module.exports = {
         const token = signToken(user)
         res.json( {token, user})
     },
+    async  updateUser ({params, body}, res) {
+        const updatedUser = await User.findByIdAndUpdate(
+            {_id: params._id},
+            {$set: body},
+            {new: true})
+            !updatedUser
+                ? res.status(404).json({ message: 'No user found' })
+                : res.json(updatedUser)
+    },
     async login({body}, res){
          const user = await User.findOne({
             $or: [{username: body.username}, {email: body.email}]

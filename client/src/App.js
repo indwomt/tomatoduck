@@ -8,9 +8,6 @@ import useLocalStorage from 'use-local-storage'
 import { Toggle2Off } from 'react-bootstrap-icons';
 import {useState} from 'react'
 
-
-
-
 function App() {
 
   const [theme, setTheme] = useLocalStorage('theme', 'light');
@@ -21,7 +18,6 @@ function App() {
     setTheme(newTheme);
     setIsDarkMode(!isDarkMode);
   };
-
 
   return (
     <Router>
