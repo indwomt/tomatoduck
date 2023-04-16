@@ -32,8 +32,6 @@ export default function Tasks() {
         console.log(error)
     }
 }
-//use effect grabs user object from db in order to acces todo array fro our saved tasks
-  
   const handleInput = (e) => {
    const {name, value} = e.target
    setTodo({todos, [name]:value})
@@ -54,6 +52,7 @@ export default function Tasks() {
     }
    } 
 const userArray = userData.todos
+//use effect grabs user object from db in order to acces todo array fro our saved tasks
 useEffect(() => {
   const getUser= async () => {
     try {

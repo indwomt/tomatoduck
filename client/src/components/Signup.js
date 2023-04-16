@@ -25,10 +25,9 @@ const SignUpForm = () => {
             if(!response.ok) {
                 throw new Error(`something's wrong`)
             }
-
             const {token, user} = await response.json()
-            console.log(user)
-            Auth.login(token)
+           if (user) {
+             Auth.login(token)}
         } catch (error) {
             console.error(error)
             setAlert(true)
