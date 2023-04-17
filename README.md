@@ -22,6 +22,11 @@
 
 `Tomato Timer with a rubber Duck`
 
+## Preview
+
+![tomatoduckscreenshot](https://user-images.githubusercontent.com/112091298/232546266-63f4df05-c454-40a1-b86d-a957a773b94f.PNG)
+
+
 Application features a timer with 3 different intervals , a section to add tasks to be completed, and a helpful rubber duck that functions as a chat bot powered by open ai
 
 
