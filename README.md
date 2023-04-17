@@ -24,7 +24,7 @@ TomatoDuck is a single-page application to help students study with a pomodoro-s
 
 ## Preview
 
-![tomatoduckscreenshot](https://user-images.githubusercontent.com/112091298/232546266-63f4df05-c454-40a1-b86d-a957a773b94f.PNG)
+[![tomatoduckscreenshot](https://user-images.githubusercontent.com/112091298/232546266-63f4df05-c454-40a1-b86d-a957a773b94f.PNG)](https://tomatoduck.herokuapp.com/)
 
 
 Application features a timer with 3 different intervals , a section to add tasks to be completed, and a helpful rubber duck that functions as a chat bot powered by open ai
@@ -34,7 +34,7 @@ Application features a timer with 3 different intervals , a section to add tasks
 
 [![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)](https://tomatoduck.herokuapp.com/)...[Deployed Site](https://tomatoduck.herokuapp.com/)
 
-[![screenshot](./client/src/assets/screen.png)](https://tomatoduck.herokuapp.com/)
+
 
 
 ## Credit
