@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import alarm from '../assets/clock-alarm-8761.mp3'
 import { useTimer } from 'react-timer-hook';
 
 export default function Timer() {
@@ -14,6 +15,8 @@ export default function Timer() {
     expiryTimestamp: new Date().getTime() + duration * 1000,
     onExpire: () => {
       console.warn('onExpire called')
+      const audio = new Audio(alarm)
+      audio.play()
     },
     autoStart: false
   });
