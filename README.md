@@ -34,6 +34,8 @@ Application features a timer with 3 different intervals , a section to add tasks
 
 [![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)](https://tomatoduck.herokuapp.com/)...[Deployed Site](https://tomatoduck.herokuapp.com/)
 
+[![screenshot](./client/src/assets/screen.png)](https://tomatoduck.herokuapp.com/)
+
 
 ## Credit
 
