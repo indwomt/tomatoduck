@@ -20,7 +20,7 @@
 
 ## Description
 
-`Tomato Timer with a rubber Duck`
+TomatoDuck is a single-page application to help students study with a pomodoro-style timer, keep track of goals, and chat with a rubber duck when they're stuck!
 
 ## Preview
 
