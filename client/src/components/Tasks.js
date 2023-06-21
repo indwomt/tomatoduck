@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
-import TaskCard from "./task-card";
+import TaskCard from "./Task-card";
 import TaskNoSignup from "./Task-no-signup";
 import Auth from "../utils/auth";
 import { saveTodo, getMe } from "../utils/API";
@@ -20,17 +20,20 @@ export default function Tasks() {
   const deleteTask = async (id) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
     if (!token) {
-      return false;
-    }
-    try {
-      const del = await deleteTodo(id, token);
-      if (!del.ok) {
-        throw new Error(`task not deleting`);
+      const todoArray = JSON.parse(localStorage.getItem(`todos`));
+const newArray = todoArray.filter(todoArray=> todoArray !== id)
+localStorage.setItem(`todos`, JSON.stringify(newArray))
+    } else {
+      try {
+        const del = await deleteTodo(id, token);
+        if (!del.ok) {
+          throw new Error(`task not deleting`);
+        }
+        const updatedUser = await del.json();
+        setTodo(updatedUser);
+      } catch (error) {
+        console.log(error);
       }
-      const updatedUser = await del.json();
-      setTodo(updatedUser);
-    } catch (error) {
-      console.log(error);
     }
   };
   const handleInput = (e) => {
@@ -77,6 +80,7 @@ export default function Tasks() {
     };
     getUser();
   }, [todos]);
+  
   return (
     <div className=" task-section col-12 d-flex-col my-5">
       <div className="task-header col-12 justify-content-between d-flex flex-wrap">
@@ -119,7 +123,7 @@ export default function Tasks() {
             </Modal.Footer>
           </Form>
         ) : (
-          <TaskNoSignup close={handleClose}/>
+          <TaskNoSignup close={handleClose} />
         )}
       </Modal>
     </div>
